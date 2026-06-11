@@ -30,40 +30,9 @@ DATASET = open("DATASET.csv", "r",encoding="UTF-8")
 #                    (el argumento mode es opcional, se asume 'r' si se omite)
 #  -- encoding="utf-8": es la codificacion del archivo incluye todo el alfebeto en distintos idiomas y emojis 
 
+f = open("DATASET.csv",'r',encoding="utf-8")
 
-def f():
+with open("DATASET.csv",encoding="utf-8") as f:
+    read_data = f.read()
 
-    # Llamada a DataSet
-    with DATASET as f:
-        
-        # Columnas convierte cada fila en un diccionario
-        Columnas = csv.DictReader(f)
-        # {'Id': Value,...,'License': Value}
-        
-        # Acumuladores
-        cantidad = 0
-        suma = 0
-        
-        # Iteracion para calcular el promedio
-        for fila in Columnas:
-            
-            # Busca las filas tal que coinciden con "Xochimilco"
-            if fila["neighbourhood"] == "Xochimilco":
-                
-                # Definicion 
-                suma += float(fila["price"])
-                cantidad += 1
-
-        # Caso si hay registros de Xochimilco
-        if cantidad > 0:
-
-            # Operacion
-            promedio = suma / cantidad
-            print(f"El promedio de precio en Xochimilco es: {promedio}")
-        
-        # Caso si no hay registros de Xochimilco
-        else:
-            print("No se encontraron registros para Xochimilco.")
-
-    return None
-
+f.closed

@@ -32,7 +32,7 @@ DATASET.close()"""
 #                    (el argumento mode es opcional, se asume 'r' si se omite)
 #  -- encoding="utf-8": es la codificacion del archivo incluye todo el alfebeto en distintos idiomas y emojis 
 
-f = open("DATASET.csv",'w',encoding="utf-8")
+f = open("DATASET.csv",'r',encoding="utf-8")
 
 with open("DATASET.csv",encoding="utf-8") as f:
     read_data = f.read()

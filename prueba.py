@@ -18,7 +18,7 @@ import csv
 #st.subheader("Airbnb, ciudad de México DF (MEX)")
 
 
-DATASET = open("DATASET.csv", "r",encoding="UTF-8")
+DATASET = open("datos.csv", "r",encoding="UTF-8")
 
 
 # La funcion open( nombre_de_archivo , modo , encoding=None) tiene 3 argumentos los cuales 

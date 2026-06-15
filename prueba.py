@@ -18,8 +18,8 @@ import csv
 #st.subheader("Airbnb, ciudad de México DF (MEX)")
 
 
-DATASET = open("datos.csv", "r",encoding="UTF-8")
-
+with open("datos.csv", "r", encoding="UTF-8") as archivo:
+    DATASET = list(csv.DictReader(archivo))
 
 # La funcion open( nombre_de_archivo , modo , encoding=None) tiene 3 argumentos los cuales 
 #  --  nombre_de_archivo: es el nombre del archivo
@@ -80,7 +80,7 @@ def PREGUNTA_4():
 
     return None
 
-PREGUNTA_4()
+# PREGUNTA_4()
 
 """
 
@@ -90,21 +90,48 @@ Tomas
 
 se le ingresa la alaldia: puede ser = 
 
-1   "Álvaro Obregón"
-2   "Azcapotzalco"
-3   "Benito Juárez"
-4   "Coyoacán"
-5   "Cuajimalpa de Morelos"
-6   "Cuauhtémoc"
-7   "Gustavo A. Madero"
-8   "Iztacalco"
-9   "Iztapalapa" (La más poblada)
-10  "La Magdalena Contreras"
-11  "Miguel Hidalgo"
-12  "Milpa Alta"(La menos poblada)
-13  "Tláhuac"
-14  "Tlalpan" (La más grande en superficie)
-15  "Venustiano Carranza"
-16  "Xochimilco"
+0  "Álvaro Obregón"
+1  "Azcapotzalco"
+2  "Benito Juárez"
+3  "Coyoacán"
+4  "Cuajimalpa de Morelos"
+5  "Cuauhtémoc"
+6  "Gustavo A. Madero"
+7  "Iztacalco"
+8  "Iztapalapa"
+9  "La Magdalena Contreras"
+10 "Miguel Hidalgo"
+11 "Milpa Alta"
+12 "Tláhuac"
+13 "Tlalpan" 
+14 "Venustiano Carranza"
+15 "Xochimilco"
 
+"Álvaro Obregón","Azcapotzalco","Benito Juárez",
+"Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc",
+"Gustavo A. Madero","Iztacalco",
+"Iztapalapa","La Magdalena Contreras",
+"Miguel Hidalgo","Milpa Alta",
+"Tláhuac","Tlalpan",
+"Venustiano Carranza","Xochimilco"
 """
+
+lista_de_alcaldias = ["Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco"]
+
+def PREGUNTA_3(indice):
+
+        alcaldia_buscada = lista_de_alcaldias[indice]
+
+        #acumulador 
+        cantidad = 0 
+
+        for i in DATASET:
+            if i["neighbourhood"] == alcaldia_buscada:
+                cantidad += 1
+                
+        print("la cantidad de publicaciones de: ", alcaldia_buscada, "es:", cantidad)
+
+
+PREGUNTA_3(2)
+PREGUNTA_3(5)
+PREGUNTA_3(14)

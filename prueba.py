@@ -38,10 +38,10 @@ DATASET = open("datos.csv", "r",encoding="UTF-8")
 def PREGUNTA_4():
 
     # Llamada a DataSet
-    with DATASET as f:
+    with DATASET as PREGUNTA_4:
         
         # Columnas convierte cada fila en un diccionario
-        Columnas = csv.DictReader(f)
+        Columnas = csv.DictReader(PREGUNTA_4)
         # {'Id': Value,...,'License': Value}
         
         # Acumuladores
@@ -82,6 +82,29 @@ def PREGUNTA_4():
 
 PREGUNTA_4()
 
-#funcion de la pregunta 3
-#¿Cuántos alquileres están disponibles en una alcaldía(?)
-#tomas
+"""
+
+funcion de la pregunta 3
+¿Cuántos alquileres están disponibles en una alcaldía(?)
+Tomas
+
+se le ingresa la alaldia: puede ser = 
+
+1   "Álvaro Obregón"
+2   "Azcapotzalco"
+3   "Benito Juárez"
+4   "Coyoacán"
+5   "Cuajimalpa de Morelos"
+6   "Cuauhtémoc"
+7   "Gustavo A. Madero"
+8   "Iztacalco"
+9   "Iztapalapa" (La más poblada)
+10  "La Magdalena Contreras"
+11  "Miguel Hidalgo"
+12  "Milpa Alta"(La menos poblada)
+13  "Tláhuac"
+14  "Tlalpan" (La más grande en superficie)
+15  "Venustiano Carranza"
+16  "Xochimilco"
+
+"""

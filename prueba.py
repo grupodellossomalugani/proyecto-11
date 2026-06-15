@@ -30,7 +30,12 @@ DATASET = open("datos.csv", "r",encoding="UTF-8")
 #                    (el argumento mode es opcional, se asume 'r' si se omite)
 #  -- encoding="utf-8": es la codificacion del archivo incluye todo el alfebeto en distintos idiomas y emojis 
 
-def f():
+
+#FUNCION DE LA PREGUNTA 4
+# Cuál es el precio promedio si deseo hospedarme en la alcaldía Xochimilco?
+#  Luca 
+
+def PREGUNTA_4():
 
     # Llamada a DataSet
     with DATASET as f:
@@ -75,4 +80,8 @@ def f():
 
     return None
 
-f()
+PREGUNTA_4()
+
+#funcion de la pregunta 3
+#¿Cuántos alquileres están disponibles en una alcaldía(?)
+#tomas

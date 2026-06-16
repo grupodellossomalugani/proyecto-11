@@ -36,22 +36,14 @@ with open("datos.csv", "r", encoding="UTF-8") as archivo:
 #  Luca 
 
 def PREGUNTA_4():
-
-    # Llamada a DataSet
-    with DATASET as PREGUNTA_4:
-        
-        # Columnas convierte cada fila en un diccionario
-        Columnas = csv.DictReader(PREGUNTA_4)
-        # {'Id': Value,...,'License': Value}
-        
+     
         # Acumuladores
         cantidad = 0
         suma = 0
-        SinPrecio = 0 
 
 
         # Iteracion para calcular el promedio
-        for fila in Columnas:
+        for fila in DATASET:
             
             # Busca las filas tal que coinciden con "Xochimilco"
             if fila["neighbourhood"] == "Xochimilco":
@@ -78,9 +70,9 @@ def PREGUNTA_4():
         else:
             print("No se encontraron registros para Xochimilco.")
 
-    return None
 
-# PREGUNTA_4()
+
+PREGUNTA_4()
 
 """
 
@@ -131,7 +123,8 @@ def PREGUNTA_3(indice):
                 
         print("la cantidad de publicaciones de: ", alcaldia_buscada, "es:", cantidad)
 
-
+"""
 PREGUNTA_3(2)
 PREGUNTA_3(5)
 PREGUNTA_3(14)
+"""

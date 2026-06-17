@@ -1,4 +1,3 @@
-import streamlit as st
 import csv 
 from lector import DATASET
 
@@ -14,18 +13,6 @@ from lector import DATASET
 
 # Para ejecutar el codigo " python3 -m streamlit run prueba.py " ==========
 
-st.title("Proyecto Programacion Ⅱ ")
-st.subheader("Integrantes: Malugani Luca")
-
-
-# La funcion open( nombre_de_archivo , modo , encoding=None) tiene 3 argumentos los cuales 
-#  --  nombre_de_archivo: es el nombre del archivo
-#  --  modo: puede ser 'r' cuando el fichero solo se lea
-#                    'w' para solo escritura
-#                    'a' abre el fichero para agregar cualquier dato
-#                    'r+' abre el fichero tanto para lectura como para escritura
-#                    (el argumento mode es opcional, se asume 'r' si se omite)
-#  -- encoding="utf-8": es la codificacion del archivo incluye todo el alfebeto en distintos idiomas y emojis 
 
 
 #FUNCION DE LA PREGUNTA 4

@@ -1,5 +1,6 @@
 import streamlit as st
 import csv 
+from lector import DATASET
 
 # LIBRERIAS Q SE PUEDEN USAR StreamLight.io, MatPlotLib, csv y Pytest 
 
@@ -13,14 +14,10 @@ import csv
 
 # Para ejecutar el codigo " python3 -m streamlit run prueba.py " ==========
 
-st.title("Proyecto programacion 2 ")
-st.subheader("Airbnb, ciudad de México DF (MEX)")
+st.title("Proyecto Programacion Ⅱ ")
+st.subheader("Integrantes: Malugani Luca")
 
 
-with open("datos.csv", "r", encoding="UTF-8") as archivo:
-    DATASET = list(csv.DictReader(archivo))
-
-"""
 # La funcion open( nombre_de_archivo , modo , encoding=None) tiene 3 argumentos los cuales 
 #  --  nombre_de_archivo: es el nombre del archivo
 #  --  modo: puede ser 'r' cuando el fichero solo se lea
@@ -34,7 +31,6 @@ with open("datos.csv", "r", encoding="UTF-8") as archivo:
 #FUNCION DE LA PREGUNTA 4
 # Cuál es el precio promedio si deseo hospedarme en la alcaldía Xochimilco?
 #  Luca 
-"""
 
 
 def PREGUNTA_4():
@@ -74,38 +70,30 @@ def PREGUNTA_4():
 
 PREGUNTA_4()
 
-"""
-funcion de la pregunta 3
-¿Cuántos alquileres están disponibles en una alcaldía(?)
-Tomas
 
-se le ingresa la alaldia: puede ser = 
+# funcion de la pregunta 3
+# ¿Cuántos alquileres están disponibles en una alcaldía(?)
+# Tomas
+#
+# se le ingresa la alcaldia: puede ser =
+#
+# 0  "Álvaro Obregón"
+# 1  "Azcapotzalco"
+# 2  "Benito Juárez"
+# 3  "Coyoacán"
+# 4  "Cuajimalpa de Morelos"
+# 5  "Cuauhtémoc"
+# 6  "Gustavo A. Madero"
+# 7  "Iztacalco"
+# 8  "Iztapalapa"
+# 9  "La Magdalena Contreras"
+# 10 "Miguel Hidalgo"
+# 11 "Milpa Alta"
+# 12 "Tláhuac"
+# 13 "Tlalpan"
+# 14 "Venustiano Carranza"
+# 15 "Xochimilco"
 
-0  "Álvaro Obregón"
-1  "Azcapotzalco"
-2  "Benito Juárez"
-3  "Coyoacán"
-4  "Cuajimalpa de Morelos"
-5  "Cuauhtémoc"
-6  "Gustavo A. Madero"
-7  "Iztacalco"
-8  "Iztapalapa"
-9  "La Magdalena Contreras"
-10 "Miguel Hidalgo"
-11 "Milpa Alta"
-12 "Tláhuac"
-13 "Tlalpan" 
-14 "Venustiano Carranza"
-15 "Xochimilco"
-
-"Álvaro Obregón","Azcapotzalco","Benito Juárez",
-"Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc",
-"Gustavo A. Madero","Iztacalco",
-"Iztapalapa","La Magdalena Contreras",
-"Miguel Hidalgo","Milpa Alta",
-"Tláhuac","Tlalpan",
-"Venustiano Carranza","Xochimilco"
-"""
 
 lista_de_alcaldias = ["Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco"]
 

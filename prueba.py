@@ -1,7 +1,6 @@
 import streamlit as st
 import csv 
 
-
 # LIBRERIAS Q SE PUEDEN USAR StreamLight.io, MatPlotLib, csv y Pytest 
 
 # streamlit = crea paginas web interactivas traduciendo todo lo que se hace en python en (HTML, CSS y JavaScript)
@@ -14,13 +13,14 @@ import csv
 
 # Para ejecutar el codigo " python3 -m streamlit run prueba.py " ==========
 
-#st.title("Proyecto programacion 2 ")
-#st.subheader("Airbnb, ciudad de México DF (MEX)")
+st.title("Proyecto programacion 2 ")
+st.subheader("Airbnb, ciudad de México DF (MEX)")
 
 
 with open("datos.csv", "r", encoding="UTF-8") as archivo:
     DATASET = list(csv.DictReader(archivo))
 
+"""
 # La funcion open( nombre_de_archivo , modo , encoding=None) tiene 3 argumentos los cuales 
 #  --  nombre_de_archivo: es el nombre del archivo
 #  --  modo: puede ser 'r' cuando el fichero solo se lea
@@ -34,6 +34,8 @@ with open("datos.csv", "r", encoding="UTF-8") as archivo:
 #FUNCION DE LA PREGUNTA 4
 # Cuál es el precio promedio si deseo hospedarme en la alcaldía Xochimilco?
 #  Luca 
+"""
+
 
 def PREGUNTA_4():
      
@@ -70,12 +72,9 @@ def PREGUNTA_4():
         else:
             print("No se encontraron registros para Xochimilco.")
 
-
-
 PREGUNTA_4()
 
 """
-
 funcion de la pregunta 3
 ¿Cuántos alquileres están disponibles en una alcaldía(?)
 Tomas
@@ -115,16 +114,19 @@ def PREGUNTA_3(indice):
         alcaldia_buscada = lista_de_alcaldias[indice]
 
         #acumulador 
-        cantidad = 0 
-
+        lista_posiciones = []
         for i in DATASET:
             if i["neighbourhood"] == alcaldia_buscada:
-                cantidad += 1
-                
-        print("la cantidad de publicaciones de: ", alcaldia_buscada, "es:", cantidad)
+                diccionario_posiciones = {"longitude": float(i["longitude"]), "latitude": float(i["latitude"])}
+                lista_posiciones.append(diccionario_posiciones)      
+        
+        st.map(lista_posiciones)
 
-"""
+        cantidad = len(lista_posiciones)
+        print("la cantidad de publicaciones de",alcaldia_buscada, "es:",cantidad)
+    
+        return cantidad
+
 PREGUNTA_3(2)
-PREGUNTA_3(5)
-PREGUNTA_3(14)
-"""
+#PREGUNTA_3(5)
+#PREGUNTA_3(14)

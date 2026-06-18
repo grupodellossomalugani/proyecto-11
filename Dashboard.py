@@ -13,8 +13,10 @@ from Pregunta_3 import PREGUNTA_3, lista_de_alcaldias
 
 # Para ejecutar el codigo " python3 -m streamlit run Dashboard.py " ==========
 
-st.title("Proyecto Programacion Ⅱ ")
-st.subheader("Integrantes: Malugani Luca, Dell'Osso Tomas")
+st.title("Airbnb Ciudad de México")
+st.subheader("Análisis de publicaciones y alquileres por alcaldía")
+st.write("Integrantes: Malugani Luca, Dell'Osso Tomas")
+
 
 # widget de interfaz de usuario 
 alcaldia = st.selectbox(

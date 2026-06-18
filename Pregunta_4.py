@@ -13,7 +13,7 @@ def PREGUNTA_4():
         # Acumuladores
         cantidad = 0
         suma = 0
-
+        SinPrecio = 0
 
         # Iteracion para calcular el promedio
         for fila in DATASET:
@@ -29,7 +29,7 @@ def PREGUNTA_4():
                     cantidad += 1
                 
                 else:
-                    pass
+                    SinPrecio += 1
 
 
         # Caso si hay registros de Xochimilco
@@ -38,6 +38,7 @@ def PREGUNTA_4():
             # Operacion
             promedio = round(suma / cantidad, 2)
             print(f"El promedio de precio en Xochimilco es: {promedio}")
+            print(f"La cantidad de hospedajes sin precio no contabilizados fueron: {SinPrecio}")
         
         # Caso si no hay registros de Xochimilco
         else:

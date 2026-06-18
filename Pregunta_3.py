@@ -36,17 +36,22 @@ def PREGUNTA_3(indice):
         lista_posiciones = []
         for i in DATASET:
             if i["neighbourhood"] == alcaldia_buscada:
-                diccionario_posiciones = {"longitude": float(i["longitude"]), "latitude": float(i["latitude"])}
+                diccionario_posiciones = {
+                                        "longitude": float(i["longitude"]),
+                                        "latitude": float(i["latitude"])
+                                }
                 lista_posiciones.append(diccionario_posiciones)      
         
+        st.subheader(alcaldia_buscada)  
         st.map(lista_posiciones)
 
         cantidad = len(lista_posiciones)
+
+        st.write("Cantidad de publicaciones:", cantidad)
         print("la cantidad de publicaciones de",alcaldia_buscada, "es:",cantidad)
     
         return cantidad
 
-PREGUNTA_3(2)
-PREGUNTA_3(5)
-PREGUNTA_3(14)
+#PREGUNTA_3(2)
+
 

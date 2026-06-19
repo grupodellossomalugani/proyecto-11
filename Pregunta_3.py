@@ -43,7 +43,7 @@ def PREGUNTA_3(indice):
                 lista_posiciones.append(diccionario_posiciones)      
         
         st.subheader(alcaldia_buscada)  
-        st.map(lista_posiciones)
+        st.map(lista_posiciones,color="#ff5a5f")
 
         cantidad = len(lista_posiciones)
 

@@ -16,18 +16,21 @@ from Pregunta_1 import PREGUNTA_1
 
 # Para ejecutar el codigo " python3 -m streamlit run Dashboard.py " ==========
 
-#st.title("Airbnb Ciudad de México")
-st.image("AIRBNB.png",caption="Logo de Airbnb", width=300)
-st.subheader("Análisis de publicaciones y alquileres por alcaldía")
-st.write("Integrantes: Malugani Luca, Dell'Osso Tomas")
 
-# widget de interfaz de usuario 
-alcaldia = st.selectbox(
-    "Seleccione una alcaldia",
+#Texto a mostrar en el dasboard 
+
+#st.title("Airbnb Ciudad de México")
+st.image("AIRBNB.png",caption="Logo de Airbnb", width=300)  # -> seria el titulo 
+st.subheader("Analisis de publicaciones y alquileres por alcaldia") # -> encabezado 
+st.write("Integrantes: Malugani Luca, Dell'Osso Tomas")  
+
+# widget de interfaz de usuario se usa st.selectbox para asi poder crear el menu desplegable
+alcaldia = st.selectbox(  
+    "Seleccionee una alcaldia",
     lista_de_alcaldias
 )
 
-PREGUNTA_3(lista_de_alcaldias.index(alcaldia))
+PREGUNTA_3(lista_de_alcaldias.index(alcaldia))#indexea la lista de alcaldias 
 
 datos = PREGUNTA_1()
 
@@ -38,14 +41,15 @@ for i in range(len(datos)):
     alcaldias.append(datos[i][0])
     promedios.append(datos[i][1])
 
+#se encarga de crear la figura vacia
 fig, ax = plt.subplots()
 
-ax.bar(alcaldias, promedios, color="#ff5a5f")
+ax.bar(alcaldias, promedios, color="#ff5a5f") #diseno del grafico vertical de barras
 
-ax.set_title("Promedio de precio por alcaldía")
-ax.set_xlabel("Alcaldía")
-ax.set_ylabel("Precio promedio")
+ax.set_title("Promedio de precio por alcaldia")  #titulo del grafico 
+ax.set_xlabel("Alcaldia") #nombre en el eje x
+ax.set_ylabel("Precio promedio") #nombre en el ejee y
 
-plt.xticks(rotation=90)
+plt.xticks(rotation=90) #rotacion de los nombres de las alcaldias 
 
-st.pyplot(fig)
+st.pyplot(fig)#muestra el grafico en el streamlit

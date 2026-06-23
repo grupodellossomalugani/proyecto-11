@@ -1,4 +1,4 @@
-import csv 
+import matplotlib.pyplot as plt 
 from lector import dataset
 import streamlit as st
 
@@ -10,43 +10,64 @@ import streamlit as st
 #  Luca 
 
 
-def PREGUNTA_4():
+def PREGUNTA_4(alcaldias,DATOS):
+    
+    # Lista que guardara el promedio de los precios
+    precios = []
 
-        DATASET = dataset()
+
+    # Calcula el promedio por alcaldía
+    for i in alcaldias:
 
 
-        # Acumuladores
-        cantidad = 0
         suma = 0
-        SinPrecio = 0
-
-        # Iteracion para calcular el promedio
-        for fila in DATASET:
-            
-            # Busca las filas tal que coinciden con "Xochimilco"
-            if fila["neighbourhood"] == "Xochimilco":
-                
-                # Evalua que el precio no sea un espacio en blanco
-                if fila["price"] != "":
-                    
-                    # Definicion 
-                    suma += float(fila["price"])
-                    cantidad += 1
-                
-                else:
-                    SinPrecio += 1
-
-
-        # Caso si hay registros de Xochimilco
-        if cantidad > 0:
-
-            # Operacion
-            promedio = round(suma / cantidad, 2)
-            print(f"El promedio de precio en Xochimilco es: {promedio}")
-            print(f"La cantidad de hospedajes sin precio no contabilizados fueron: {SinPrecio}")
+        cantidad = 0
         
-        # Caso si no hay registros de Xochimilco
-        else:
-            print("No se encontraron registros para Xochimilco.")
+        
+        for j in DATOS:
 
-PREGUNTA_4()
+            
+            if j["neighbourhood"] == i:
+                
+                # Calcula la suma total y la cantidad de hospedajes
+                if j["price"] != "":
+                    suma += float(j["price"])
+                    cantidad += 1
+
+        
+        # Operación
+        if cantidad != 0:            
+            promedio = suma / cantidad
+            precios.append(promedio)
+    
+
+    # Crea una figura (Gráfico)
+    fig, ax = plt.subplots()
+
+    
+    # Dibuja las gráficas sobre los ejes
+    ax.plot(alcaldias,precios)
+    
+
+    # Titulo de la gráfica
+    ax.set_title("Promedio de precio por alcaldía")
+
+
+    # Coloca de forma vertical cada punto del eje x
+    plt.xticks(rotation=90, fontsize=8)
+
+
+    # Titulo de eje X
+    ax.set_xlabel("Alcaldía")
+    
+    # Titulo de eje y
+    ax.set_ylabel("Promedio")
+
+
+    # Muestra la figura en streamlit
+    st.pyplot(fig)
+
+
+    return precios
+
+

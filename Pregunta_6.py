@@ -1,9 +1,10 @@
-from lector import DATASET
+from lector import dataset
 import streamlit as st
 
 
 def PREGUNTA_6():
-    DATOS = DATASET
+    
+    DATOS = dataset()
 
 
     # Coordenadas Catedral

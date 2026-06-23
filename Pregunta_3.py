@@ -1,6 +1,11 @@
 import csv 
-from lector import DATASET
+from lector import dataset
 import streamlit as st
+
+#Tomas
+
+#cosas por hacer
+#falta agregar los casos de pruebas en donde sea posible 
 
 # funcion de la pregunta 3
 # ¿Cuántos alquileres están disponibles en una alcaldía(?)
@@ -31,6 +36,8 @@ lista_de_alcaldias = ["Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoac
 def PREGUNTA_3(indice):
 
         alcaldia_buscada = lista_de_alcaldias[indice]
+
+        DATASET = dataset()
 
         #acumulador 
         lista_posiciones = []

@@ -1,6 +1,8 @@
 import csv 
-from lector import DATASET
+from lector import dataset
 import streamlit as st
+
+#Luca
 
 
 #FUNCION DE LA PREGUNTA 4
@@ -9,7 +11,10 @@ import streamlit as st
 
 
 def PREGUNTA_4():
-     
+
+        DATASET = dataset()
+
+
         # Acumuladores
         cantidad = 0
         suma = 0

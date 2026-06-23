@@ -1,6 +1,6 @@
 from lector import dataset
 import streamlit as st
-from Dashboard import alcaldia
+from Pregunta_3 import lista_de_alcaldias
 
 def PREGUNTA_5():
     
@@ -15,7 +15,7 @@ def PREGUNTA_5():
 
 
     # Pide al usuario que ingrese una alcaldia y un precio maximo
-    alcaldiaSeleccionada = st.selectbox("Seleccione una alcaldía", alcaldia)
+    alcaldia = st.selectbox("Seleccione una alcaldía", lista_de_alcaldias)
     
     precio = st.number_input(
     "Ingrese un precio maximo para filtrar", min_value=0.0, max_value=100000.0,value=0.0,step=100.0, placeholder="Ingresar"
@@ -26,7 +26,7 @@ def PREGUNTA_5():
     for i in DATOS:
     
     
-        if i["neighbourhood"] == alcaldiaSeleccionada:
+        if i["neighbourhood"] == alcaldia:
 
 
             # Evalua que el precio cumpla la condicion

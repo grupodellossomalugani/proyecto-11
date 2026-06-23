@@ -1,5 +1,5 @@
 import csv 
-from lector import DATASET
+from lector import dataset
 from Pregunta_3 import lista_de_alcaldias
 
 #Tomas
@@ -11,6 +11,8 @@ def PREGUNTA_1():
 
     #lista vacia donde se van a guardar los promedios 
     lista_promedios = []
+
+    DATASET = dataset()
 
     #for q rrecorre todas las alcaldias  
     for alcaldia in lista_de_alcaldias:

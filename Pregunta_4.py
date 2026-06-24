@@ -1,17 +1,18 @@
-import matplotlib.pyplot as plt 
-from lector import dataset
+import matplotlib.pyplot as plt
 import streamlit as st
-
-#Luca
-
 
 #FUNCION DE LA PREGUNTA 4
 # Cuál es el precio promedio si deseo hospedarme en la alcaldía Xochimilco?
 #  Luca 
 
 
-def PREGUNTA_4(alcaldias,DATOS):
-    
+def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
+    """
+    La función recibe una lista con todas las alcaldías y calcula 
+    el precio promedio de cada una. Luego, realiza un gráfico comparando
+    precios.
+    """
+
     # Lista que guardara el promedio de los precios
     precios = []
 
@@ -19,11 +20,11 @@ def PREGUNTA_4(alcaldias,DATOS):
     # Calcula el promedio por alcaldía
     for i in alcaldias:
 
-
+        # Acumuladores temporales
         suma = 0
         cantidad = 0
         
-        
+        # Comparación
         for j in DATOS:
 
             
@@ -69,5 +70,3 @@ def PREGUNTA_4(alcaldias,DATOS):
 
 
     return precios
-
-

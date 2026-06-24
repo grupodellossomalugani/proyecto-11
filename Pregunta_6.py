@@ -39,6 +39,7 @@ def PREGUNTA_6(DATOS:list)->list:
 
 
             # Calculo para saber si se encuentra en el radio
+            # 0.5km = 0.0002143 r
             if (X -  Xc)**2 + (Y - Yc)**2 <= 0.00002143:
 
 

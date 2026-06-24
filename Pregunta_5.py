@@ -1,10 +1,18 @@
 from lector import dataset
 import streamlit as st
-from Pregunta_3 import lista_de_alcaldias
 
 def PREGUNTA_5(alcaldia:str,precio:int,DATOS:list)->list:
+    """
+    La función recibe una alcaldía, un precio maximo y la dataset, a partir de
+    estos datos la función filtra los hospedajes que se encuentran en la alcaldía
+    dada por un monto menor o igual a precio.
+    Ejemplo:
+    PREGUNTA_5("Álvaro Obregón" , 200.0 , dataset()) == [{"Nombre": "Cómodo y lindo Dpto.", "Precio": 150.0, "Ubicación": (-99.24999814788514, 19.32927732036978)},
+                                                         {"Nombre": "cuarto privado con baño propio", "Precio": 154.0, "Ubicación": (-99.27086530036256, 19.314865453550965)},
+                                                         {"Nombre": "533 Habitación céntrica en remodelación", "Precio": 189.0, "Ubicación": (-99.1956584278164, 19.372925252214305)},
+                                                         {"Nombre": "Habitación no. 9 | Las Almendras", "Precio": 196.0, "Ubicación": (-99.21619, 19.37231)}]
+    """
     
-    listaAlcaldia = []
 
     # Tabla resultante
     tabla = []
@@ -25,19 +33,22 @@ def PREGUNTA_5(alcaldia:str,precio:int,DATOS:list)->list:
                 tabla.append({
                     "Nombre": i["name"],
                     "Precio": float(i["price"]),
-                    "Direccion": " "
+                    "Ubicación": (float(i["longitude"]), float(i["latitude"]))
                 })
     
 
-    # Data 
+    # Tabla en streamlit
     st.dataframe(tabla)
+
 
     return tabla
 
 
+# Caso de test
 def test_PREGUNTA_5():
-    assert PREGUNTA_5("Álvaro Obregón" , 200.0 , dataset()) == [{"Nombre": "Cómodo y lindo Dpto.", "Precio": 150.0, "Direccion": " "},
-                                                                {"Nombre": "cuarto privado con baño propio", "Precio": 154.0, "Direccion": " "},
-                                                                {"Nombre": "533 Habitación céntrica en remodelación", "Precio": 189.0, "Direccion": " "},
-                                                                {"Nombre": "Habitación no. 9 | Las Almendras", "Precio": 196.0, "Direccion": " "}]
+    resultado = [{"Nombre": "Cómodo y lindo Dpto.", "Precio": 150.0, "Ubicación": (-99.24999814788514, 19.32927732036978)},
+                 {"Nombre": "cuarto privado con baño propio", "Precio": 154.0, "Ubicación": (-99.27086530036256, 19.314865453550965)},
+                 {"Nombre": "533 Habitación céntrica en remodelación", "Precio": 189.0, "Ubicación": (-99.1956584278164, 19.372925252214305)},
+                 {"Nombre": "Habitación no. 9 | Las Almendras", "Precio": 196.0, "Ubicación": (-99.21619, 19.37231)}]
+    assert PREGUNTA_5("Álvaro Obregón" , 200.0 , dataset()) == resultado
 

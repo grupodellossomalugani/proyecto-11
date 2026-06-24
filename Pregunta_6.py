@@ -57,6 +57,7 @@ def PREGUNTA_6(DATOS:list)->list:
 
     # Ordena la tabla por orden ASC de las distancias
     tabla.sort(key=lambda x: x["Distancia(Km)"]) 
+    # sort[(distancia1, Fila1(dict)),...[(distanciaN, filaN(dict))]] -> [fila1(dict),...,filaN(dict)]
 
     # Tabla
     st.dataframe(tabla)

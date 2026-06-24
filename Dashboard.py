@@ -1,11 +1,13 @@
 import streamlit as st
 from lector import dataset
 import matplotlib.pyplot as plt
-from Pregunta_3 import PREGUNTA_3, lista_de_alcaldias
 from Pregunta_1 import PREGUNTA_1
+from Pregunta_2 import PREGUNTA_2
+from Pregunta_3 import PREGUNTA_3, lista_de_alcaldias
 from Pregunta_4 import PREGUNTA_4
-from Pregunta_6 import PREGUNTA_6
 from Pregunta_5 import PREGUNTA_5
+from Pregunta_6 import PREGUNTA_6
+
 
 # LIBRERIAS Q SE PUEDEN USAR StreamLight.io, MatPlotLib, csv y Pytest 
 
@@ -38,7 +40,7 @@ def main():
     
     
     # Diccionario con preguntas
-    dict_Preguntas = {"¿Cuales son las 5 alcaldias que tienen el precio mas alto?": 1, "¿Si quiero hospedarme en la alcaldía(??) cual es el precio(??) segun los diferentes tipos de habitación(??)?": 2, "¿Cuántos alquileres están disponibles en una alcaldía(??)?": 3,
+    dict_Preguntas = {"¿Cuales son las 5 alcaldias que tienen el precio mas alto?": 1, "¿Si quiero hospedarme en la alcaldía(??) cual es el precio(??) segun los diferentes tipos de habitación(??)?": 2, "¿Como se distribuyen los distintos tipos de habitacion  en cada alcaldia ": 3,
                        "¿Cuál es el precio promedio de hospedaje por alcaldía?": 4, "¿Cuáles son los hospedajes que puedo encontrar por un precio menor a (??) en la alcaldía(??)?": 5, "¿Cuáles son los hospedajes que están a menos de 0.5km de la Catedral Metropolitana?": 6}
     
     
@@ -53,7 +55,13 @@ def main():
         PREGUNTA_1()
     
     elif Pregunta == 2:
-        ...
+        
+        alcaldia = st.selectbox(
+            "Seleccione una Alcaldia",
+            lista_de_alcaldias
+        )
+
+        PREGUNTA_2(alcaldia)
 
     elif Pregunta == 3:
 

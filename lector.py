@@ -2,7 +2,6 @@
 import csv 
 
 
-
 # La funcion open( nombre_de_archivo , modo , encoding=None) tiene 3 argumentos los cuales 
 #  --  nombre_de_archivo: es el nombre del archivo
 #  --  modo: puede ser 'r' cuando el fichero solo se lea

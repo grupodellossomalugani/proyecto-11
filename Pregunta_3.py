@@ -38,6 +38,7 @@ def PREGUNTA_3(indice):
 
         #acumulador 
         lista_posiciones = []
+        
         for i in DATASET:
             if i["neighbourhood"] == alcaldia_buscada:
                 diccionario_posiciones = {

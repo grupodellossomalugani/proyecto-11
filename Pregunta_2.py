@@ -26,7 +26,6 @@ def PREGUNTA_2(alcaldia):
 
     habitaciones = {} 
 
-    
     for fila in DATASET:
 
         if fila["neighbourhood"] == alcaldia:

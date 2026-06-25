@@ -26,7 +26,7 @@ def AUX_PREGUNTA_1():
 
     DATASET = dataset()
 
-    # for que rrecorre todas las alcaldias  
+    # for que recorre todas las alcaldias  
     for alcaldia in lista_de_alcaldias:
 
         # acumuladores 
@@ -45,10 +45,10 @@ def AUX_PREGUNTA_1():
                     # agrega el precio al acumulador de suma y suma una al acumulador de cantidad 
                     suma += float(fila["price"])
                     cantidad += 1
+
         # validacion 
         if cantidad > 0:
-            
-            
+                        
             # calculo del promedio
             promedio = suma / cantidad
 

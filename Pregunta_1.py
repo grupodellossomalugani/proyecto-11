@@ -1,4 +1,4 @@
-import csv 
+
 from lector import dataset
 from Pregunta_3 import lista_de_alcaldias
 import matplotlib.pyplot as plt

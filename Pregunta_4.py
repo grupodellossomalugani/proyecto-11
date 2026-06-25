@@ -47,7 +47,7 @@ def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
 
     
     # Dibuja las gráficas sobre los ejes
-    ax.plot(alcaldias,precios)
+    ax.plot(alcaldias,precios,color="#ff5a5f")
     
 
     # Titulo de la gráfica
@@ -67,6 +67,6 @@ def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
 
     # Muestra la figura en streamlit
     st.pyplot(fig)
-
+    
 
     return precios

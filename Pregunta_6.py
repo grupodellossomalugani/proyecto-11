@@ -1,4 +1,3 @@
-from lector import dataset
 import streamlit as st
 
 

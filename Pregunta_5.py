@@ -1,4 +1,3 @@
-from lector import dataset
 import streamlit as st
 
 def PREGUNTA_5(alcaldia:str,precio:int,DATOS:list)->list:

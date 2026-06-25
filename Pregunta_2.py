@@ -36,8 +36,17 @@ def PREGUNTA_2(alcaldia):
     
     fig, ax = plt.subplots()
 
+    colores = [
+    "#ff5a5f",
+    "#ff7a7f",
+    "#ff9aa2",
+    "#ffc0cb"
+    ]
     ax.pie(
-        cantidades,labels = etiquetas, autopct="%1.1f%%"
+        cantidades,
+        labels = etiquetas,
+        colors = colores,
+        autopct="%1.1f%%"
     )
 
     ax.set_title(

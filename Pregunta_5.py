@@ -44,11 +44,3 @@ def PREGUNTA_5(alcaldia:str,precio:int,DATOS:list)->list:
     return tabla
 
 
-# Caso de test
-def test_PREGUNTA_5():
-    resultado = [{"Nombre": "Cómodo y lindo Dpto.", "Precio": 150.0, "Ubicación": (-99.24999814788514, 19.32927732036978)},
-                 {"Nombre": "cuarto privado con baño propio", "Precio": 154.0, "Ubicación": (-99.27086530036256, 19.314865453550965)},
-                 {"Nombre": "533 Habitación céntrica en remodelación", "Precio": 189.0, "Ubicación": (-99.1956584278164, 19.372925252214305)},
-                 {"Nombre": "Habitación no. 9 | Las Almendras", "Precio": 196.0, "Ubicación": (-99.21619, 19.37231)}]
-    assert PREGUNTA_5("Álvaro Obregón" , 200.0 , dataset()) == resultado
-

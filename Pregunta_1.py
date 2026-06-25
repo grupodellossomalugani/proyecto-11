@@ -6,10 +6,20 @@ import streamlit as st
 
 #Tomas
 
-#Cosas por terminar:
-#Falta el diseno de datos + casos de pruebas donde sea posible 
+
 
 def AUX_PREGUNTA_1():
+
+    # alcaldia: str
+    # precio: float
+    # lista_promedios: list
+
+    # AUX_PREGUNTA_1: () -> list
+    # Devuelve una lista con las 5 alcaldias con mayor
+    # precio promedio de hospedaje
+
+    #ej:
+    # len(AUX_PREGUNTA_1()) == 5
 
     # lista vacia donde se van a guardar los promedios 
     lista_promedios = []
@@ -59,7 +69,21 @@ def AUX_PREGUNTA_1():
     return lista_promedios[:5]
 
 
+
 def PREGUNTA_1():
+
+    #datos: list
+    # alcaldias: list
+    # promedios: list
+
+    # PREGUNTA_1: () -> None
+    # genera y muestra un grafico de barras con las 5 alcaldias que
+    # poseen el precio promedio mas alto 
+
+    # ejemplo
+    # PREGUNTA_1() -> muestra el graf
+
+
     datos = AUX_PREGUNTA_1()
 
     alcaldias = []

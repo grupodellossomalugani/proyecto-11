@@ -3,14 +3,11 @@ from lector import dataset
 import streamlit as st
 
 #Tomas
-
-#cosas por hacer
-#falta agregar los casos de pruebas en donde sea posible 
+#falta el diseno de datos 
 
 # funcion de la pregunta 3
 # ¿Cuántos alquileres están disponibles en una alcaldía(?)
-# Tomas
-#
+
 # se le ingresa la alcaldia: puede ser =
 #
 # 0  "Álvaro Obregón"

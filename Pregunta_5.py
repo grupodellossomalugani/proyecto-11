@@ -36,10 +36,15 @@ def PREGUNTA_5(alcaldia:str,precio:int,DATOS:list)->list:
                 })
     
 
-    # Tabla en streamlit
-    st.dataframe(tabla)
-
-
     return tabla
 
 
+
+def Grafico_Pregunta5(alcaldia:str,precio:int,DATOS:list):
+    
+    
+    tabla = PREGUNTA_5(alcaldia,precio,DATOS)
+    
+
+    # Tabla en strealit
+    st.dataframe(tabla)

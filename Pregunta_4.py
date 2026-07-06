@@ -15,6 +15,7 @@ def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
 
     # Lista que guardara el promedio de los precios
     precios = []
+    promedio = 0
 
 
     # Calcula el promedio por alcaldía
@@ -42,12 +43,20 @@ def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
             precios.append(promedio)
     
 
+    return alcaldias,precios
+
+
+def Grafico_Pregunta4(alcaldias:list,DATOS:list):
+    
+    
+    tabla = PREGUNTA_4(alcaldias, DATOS)
+    
     # Crea una figura (Gráfico)
     fig, ax = plt.subplots()
 
     
     # Dibuja las gráficas sobre los ejes
-    ax.plot(alcaldias,precios,color="#ff5a5f")
+    ax.plot(tabla[0],tabla[1],color="#ff5a5f")
     
 
     # Titulo de la gráfica
@@ -66,7 +75,4 @@ def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
 
 
     # Muestra la figura en streamlit
-    st.pyplot(fig)
-    
-
-    return precios
+    st.pyplot(fig)    

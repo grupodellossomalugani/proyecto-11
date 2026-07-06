@@ -1,6 +1,43 @@
 import streamlit as st
 
 
+# La funcion auxiliar ordena de menor a mayor las distancias
+# de los hospedajes
+def AuxPregunta6(tabla):
+    
+    # Lista resultante que contiene las distancias
+    listaDistancias = []
+    
+    
+    # Lista resultante que contiene los elementos acomodados
+    listaOrdenada = []
+
+
+    # Este ciclo guarda las distancias en la lista
+    for i in tabla:
+        if i["Distancia(Km)"] not in listaDistancias:
+            listaDistancias.append(i["Distancia(Km)"])
+    
+
+    # Ordena las distancias de menor a mayor
+    listaDistancias.sort()
+
+
+    # Ordena los elementos de tabla en funcion a su distancia
+    for j in listaDistancias:
+        
+        
+        for k in tabla:
+
+            if j == k["Distancia(Km)"] and k not in listaOrdenada:
+                
+                
+                listaOrdenada.append(k)
+
+
+    return listaOrdenada
+
+
 def PREGUNTA_6(DATOS:list)->list:
     """
     La función recibe la dataset en forma de lista, esta calcula los hospedajes que
@@ -55,11 +92,20 @@ def PREGUNTA_6(DATOS:list)->list:
                 })
 
 
-    # Ordena la tabla por orden ASC de las distancias
-    tabla.sort(key=lambda x: x["Distancia(Km)"]) 
-    # sort[(distancia1, Fila1(dict)),...[(distanciaN, filaN(dict))]] -> [fila1(dict),...,filaN(dict)]
+    # Ordena de menor a mayor las distancias
+    tabla = AuxPregunta6(tabla)
 
-    # Tabla
-    st.dataframe(tabla)
 
     return tabla
+        
+
+# Funcion que muestra el grafico en streamlit
+def Grafico_Pregunta6(DATASET:list):
+    
+    
+    tabla = PREGUNTA_6(DATASET)
+    
+
+    # Tabla en strealit
+    st.dataframe(tabla)
+

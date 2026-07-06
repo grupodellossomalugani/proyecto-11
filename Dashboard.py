@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from Pregunta_1 import PREGUNTA_1
 from Pregunta_2 import PREGUNTA_2
 from Pregunta_3 import PREGUNTA_3, lista_de_alcaldias
-from Pregunta_4 import PREGUNTA_4
-from Pregunta_5 import PREGUNTA_5
-from Pregunta_6 import PREGUNTA_6
+from Pregunta_4 import Grafico_Pregunta4
+from Pregunta_5 import Grafico_Pregunta5
+from Pregunta_6 import Grafico_Pregunta6
 
 # LIBRERIAS Q SE PUEDEN USAR StreamLight.io, MatPlotLib, csv y Pytest 
 
@@ -79,7 +79,7 @@ with col3:
 
 with col4: 
     st.subheader("Cuál es el precio promedio de hospedaje por alcaldía?")
-    PREGUNTA_4(lista_de_alcaldias, dataset())
+    Grafico_Pregunta4(lista_de_alcaldias, dataset())
 
 col5, col6 = st.columns(2) #==============================================================================
 
@@ -96,12 +96,12 @@ with col5:
         )
     
     # Llamado a la funcion
-    PREGUNTA_5(alcaldia,precio,dataset())
+    Grafico_Pregunta5(alcaldia,precio,dataset())
 
 with col6:
     st.subheader("Cuáles son los hospedajes que están a menos de 0.5km de la Catedral Metropolitana ")
 
-    PREGUNTA_6(dataset())    
+    Grafico_Pregunta6(dataset())    
 
 
 # COLOR DEL FONDO (ROSA PASTEL)

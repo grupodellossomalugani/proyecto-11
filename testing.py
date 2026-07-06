@@ -2,16 +2,72 @@ from Pregunta_1 import AUX_PREGUNTA_1
 from Pregunta_5 import PREGUNTA_5
 from Pregunta_6 import PREGUNTA_6
 from lector import dataset
+from Pregunta_2 import PREGUNTA_2
+from Pregunta_3 import PREGUNTA_3, lista_de_alcaldias
 
-# test_pregunta_1.py
+
+
+
+# test pregunta 1
 
 def test_devuelve_5_elementos():
 
     resultado = AUX_PREGUNTA_1()
     assert len(resultado) == 5
 
+def test_cada_elemento():
+    rta = AUX_PREGUNTA_1()
+    for i in rta:
+        assert len(i) == 2
+
+def test_promedio_flotante():
+    rta = AUX_PREGUNTA_1()
+
+    for i in rta:
+        assert type(i[1] ) == float
+
+def test_ordenado_mayor_a_menor():
+    rta = AUX_PREGUNTA_1()
+    
+    for i in range(len(rta)-1):
+        assert rta[i][1] >= rta[i+1][1]
+
+#==================================================
+#test pregunta 2
+
+def test_PREGUNTA_2_p1():
+    assert PREGUNTA_2("Coyoacán") == None
+
+def test_PREGUNTA_2_p2():
+    assert PREGUNTA_2("Cuauhtémoc") == None
 
 
+#==========================================================
+
+
+#test PREGUNTA 3
+
+
+def test_PREGUNTA_3():
+    rta = PREGUNTA_3(0)
+
+    assert type(rta) == int
+
+def test_PREGUNTA_3_alvaro_obregon():
+    cant = 0
+    for fila in dataset():
+        if fila["neighbourhood"] == "Álvaro Obregón":
+            cant += 1
+    assert PREGUNTA_3(0) == cant
+
+def test_PREGUNTA_3_coyoacan():
+    cant = 0
+    for fila in dataset():
+        if fila["neighbourhood"] == "Coyoacán":
+            cant += 1
+    assert PREGUNTA_3(3) == cant
+
+#==================================================================
 def test_PREGUNTA_5():
     resultado = [{"Nombre": "Cómodo y lindo Dpto.", "Precio": 150.0, "Ubicación": (-99.24999814788514, 19.32927732036978)},
                  {"Nombre": "cuarto privado con baño propio", "Precio": 154.0, "Ubicación": (-99.27086530036256, 19.314865453550965)},

@@ -31,7 +31,21 @@ import streamlit as st
 lista_de_alcaldias = ["Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco"]
 
 def PREGUNTA_3(indice):
+        """
+        indice: int
+        alcaldia_buscada: str
+        DATASET: list
 
+        PREGUNTA_3: int -> int
+        #recibe el indice de una alcaldia y muestra un mapa con todas
+        #las publicaciones disponibles en esa alcaldia y dice la cantidad
+        #de alquileres que se encontraron
+
+        #ejemplos
+        # PREGUNTA_3(2) -> 2587
+        # PREGUNTA_3(10) -> 4312
+        
+        """
         alcaldia_buscada = lista_de_alcaldias[indice]
 
         DATASET = dataset()

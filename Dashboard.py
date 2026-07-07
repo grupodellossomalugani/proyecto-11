@@ -26,8 +26,25 @@ from Pregunta_6 import Grafico_Pregunta6
 
 #st.title("Airbnb Ciudad de México")
 st.image("AIRBNB.png", width=300)  # -> seria el titulo 
-st.subheader("Analisis de publicaciones y alquileres por alcaldia") # -> encabezado 
-st.write("Integrantes: Malugani Luca, Dell'Osso Tomas")  
+#st.subheader("Analisis de publicaciones y alquileres por alcaldia") # -> encabezado 
+#st.write("Integrantes: Malugani Luca, Dell'Osso Tomas")  
+
+
+st.markdown(
+    "<h1 style='text-align: center; font-weight: bold;'>Análisis de publicaciones y alquileres por alcaldía</h1>",
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    "<p style='text-align: center;'>Integrantes: Malugani Luca, Dell'Osso Tomas</p>",
+    unsafe_allow_html=True
+)
+
+#para que se muestre bien el streamlit
+st.set_page_config(
+    page_title="Dashboard Airbnb",
+    layout="wide"
+)
 
 AlcaldiasTotales = [
     "Álvaro Obregón",
@@ -50,7 +67,7 @@ AlcaldiasTotales = [
 
 # para poder mostrar columnas 
 
-col1, col2, = st.columns(2) #==============================================================================
+col1, col2, col3 = st.columns(3) #==============================================================================
 
 with col1:
     st.subheader("Cuales son las 5 alcaldias que tienen el precio mas caro ?")
@@ -65,7 +82,7 @@ with col2:
 
     PREGUNTA_2(alcaldia)  
 
-col3, col4, = st.columns(2) #=============================================================================
+col4, col5,col6 = st.columns(3) #=============================================================================
 
 with col3:
     st.subheader("¿Cuántos alquileres están disponibles en una alcaldía")
@@ -81,7 +98,7 @@ with col4:
     st.subheader("Cuál es el precio promedio de hospedaje por alcaldía?")
     Grafico_Pregunta4(lista_de_alcaldias, dataset())
 
-col5, col6 = st.columns(2) #==============================================================================
+#==============================================================================
 
 with col5: 
     st.subheader("Cuáles son los hospedajes que puedo encontrar por un precio menor a x en la alcaldía")
@@ -104,19 +121,6 @@ with col6:
     Grafico_Pregunta6(dataset())    
 
 
-# COLOR DEL FONDO (ROSA PASTEL)
-st.markdown("""
-            <style>
 
-            .stApp {
-                background-color: #FFFFFF; 
-            }
-            
-            h1,h2,h3,p {
-                color: white;
-            }
-
-            </style>
-""", unsafe_allow_html=True)
 
 

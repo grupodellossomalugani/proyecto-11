@@ -5,6 +5,7 @@ import streamlit as st
 # de los hospedajes
 def AuxPregunta6(tabla):
     
+
     # Lista resultante que contiene las distancias
     listaDistancias = []
     
@@ -15,7 +16,11 @@ def AuxPregunta6(tabla):
 
     # Este ciclo guarda las distancias en la lista
     for i in tabla:
+        
+        
         if i["Distancia(Km)"] not in listaDistancias:
+            
+            
             listaDistancias.append(i["Distancia(Km)"])
     
 
@@ -28,6 +33,7 @@ def AuxPregunta6(tabla):
         
         
         for k in tabla:
+
 
             if j == k["Distancia(Km)"] and k not in listaOrdenada:
                 
@@ -100,9 +106,10 @@ def PREGUNTA_6(DATOS:list)->list:
         
 
 # Funcion que muestra el grafico en streamlit
-def Grafico_Pregunta6(DATASET:list):
+def Grafico_Pregunta6(DATASET:list)->None:
     
     
+    # Funcion auxiliar
     tabla = PREGUNTA_6(DATASET)
     
 

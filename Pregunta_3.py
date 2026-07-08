@@ -1,4 +1,3 @@
-
 from lector import dataset
 import streamlit as st
 
@@ -28,7 +27,6 @@ import streamlit as st
 # 15 "Xochimilco"
 
 
-lista_de_alcaldias = ["Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco"]
 
 def PREGUNTA_3(indice):
         """
@@ -46,6 +44,9 @@ def PREGUNTA_3(indice):
         # PREGUNTA_3(10) -> 4312
         
         """
+        lista_de_alcaldias = ["Álvaro Obregón","Azcapotzalco","Benito Juárez","Coyoacán","Cuajimalpa de Morelos","Cuauhtémoc","Gustavo A. Madero","Iztacalco","Iztapalapa","La Magdalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco"]
+
+        
         alcaldia_buscada = lista_de_alcaldias[indice]
 
         DATASET = dataset()
@@ -71,6 +72,6 @@ def PREGUNTA_3(indice):
     
         return cantidad
 
-#PREGUNTA_3(2)
+
 
 

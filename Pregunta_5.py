@@ -42,7 +42,8 @@ def PREGUNTA_5(alcaldia:str,precio:int,DATOS:list)->list:
 
 def Grafico_Pregunta5(alcaldia:str,precio:int,DATOS:list):
     
-    
+
+    # Funcion auxiliar    
     tabla = PREGUNTA_5(alcaldia,precio,DATOS)
     
 

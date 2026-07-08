@@ -1,10 +1,10 @@
+from lector import dataset
 from Pregunta_1 import AUX_PREGUNTA_1
 from Pregunta_4 import PREGUNTA_4
 from Pregunta_5 import PREGUNTA_5
 from Pregunta_6 import PREGUNTA_6
-from lector import dataset
 from Pregunta_2 import PREGUNTA_2
-from Pregunta_3 import PREGUNTA_3, lista_de_alcaldias
+from Pregunta_3 import PREGUNTA_3
 
 
 

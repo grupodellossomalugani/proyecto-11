@@ -49,6 +49,7 @@ def PREGUNTA_4(alcaldias:list,DATOS:list)->list:
 def Grafico_Pregunta4(alcaldias:list,DATOS:list):
     
     
+    # Funcion auxiliar
     tabla = PREGUNTA_4(alcaldias, DATOS)
     
     # Crea una figura (Gráfico)

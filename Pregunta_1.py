@@ -1,6 +1,3 @@
-
-from lector import dataset
-from Pregunta_3 import lista_de_alcaldias
 import matplotlib.pyplot as plt
 import streamlit as st
 
@@ -8,7 +5,7 @@ import streamlit as st
 
 
 
-def AUX_PREGUNTA_1():
+def AUX_PREGUNTA_1(DATASET:list,lista_de_alcaldias:list)->list:
 
     # alcaldia: str
     # precio: float
@@ -23,8 +20,6 @@ def AUX_PREGUNTA_1():
 
     # lista vacia donde se van a guardar los promedios 
     lista_promedios = []
-
-    DATASET = dataset()
 
     # for que recorre todas las alcaldias  
     for alcaldia in lista_de_alcaldias:
@@ -70,7 +65,7 @@ def AUX_PREGUNTA_1():
 
 
 
-def PREGUNTA_1():
+def PREGUNTA_1(DATASET:list,lista_de_alcaldias:list):
 
     #datos: list
     # alcaldias: list
@@ -84,7 +79,7 @@ def PREGUNTA_1():
     # PREGUNTA_1() -> muestra el graf
 
 
-    datos = AUX_PREGUNTA_1()
+    datos = AUX_PREGUNTA_1(DATASET,lista_de_alcaldias)
 
     alcaldias = []
     promedios = []
